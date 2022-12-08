@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="uploadImage.css"></style>
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.179.0.min.js"></script>
+  <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+  <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+  <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+  <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+  <script type="text/javascript" src="apigClient.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>        
+  <div class="mainsection">
+    <div class="child">
+        <header class="page-header">
+            <h1>Smart Photo Album</h1>
+        </header>
+
+      <div class="bar">
+          <input style="display:inline-block;" id="search" class="searchbar" type="text" title="Search">
+          <span><a style="display:inline-block;" href="#" onclick="searchFromVoice()"> 
+            <img class="voice" style="display:inline;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a></span>
+      </div>
+      <div class="buttons">
+          <button onclick="search()" class="button" type="button">Search Image</button>
+      </div>
+
+      <div class="bar">
+        <input style="display:inline-block;" id='customlabels' type='text' placeholder = "Custom Labels" class="searchbar" title="Search">
+      </div>
+
+      <div class="buttons">
+          <input type="file" class = "fa fa-cloud-upload button" onchange="previewFile(this);" accept="image/*" value="Custom label">
+        <button onclick="upload()" class="button" type="button">Upload Image</button>
+      </div>
+          
+    </div>
+
+  </div>
+
+  <div class="container" id="div">
+    <div id="div1"></div>
+</div>
+
+</body>
+
+</html>
