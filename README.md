@@ -10,7 +10,9 @@ Cloud Application for Smart Photo Album
 - Usinng the API yaml file, setup the API gateway. You would have modify the yaml. Change ARN where ever necessary.
 - Check CORS is enabled of your API gateway
 - Create an elastic search index using AWS OpenSearch. 
-- Add necessary envirnoment variables for the lambda functions
+- Add necessary envirnoment variables for the lambda functions.
+- Create an S3 bucket to store images uploaded from frontend. API gateway will upload images directly to this S3 bucket
+- Add event trigger on lambda so it can index an image automatically when image is added to S3 bucket.
 
 ### Description
 Implement a photo album web application, that can be searched using natural language through both text and voice. We will be using Lex, ElasticSearch, and Rekognition to create an intelligent search layer to query your photos for people, objects, actions, landmarks and more.
