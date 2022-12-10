@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo "Going into Lambda directory"
+      - cd lambda
+      - zip deployment_package1.zip LF1.py
+      - zip deployment_package2.zip LF2.py
+  post_build:
+    commands:
+      - echo "Updating Lambda Functions..."
+      - aws lambda update-function-code --function-name index-photos --zip-file fileb://deployment_package1.zip
+      - aws lambda update-function-code --function-name search-photos --zip-file fileb://deployment_package2.zip
+      - echo "DONE!!"
